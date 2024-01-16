@@ -1,0 +1,28 @@
+<div class="container">
+	<wcard [padding]="true">
+		<div class="profile__header w-card__header">
+			<h3 class="w-forms__title">Leads</h3>
+		</div>
+		<div class="profile__body">
+			<!--==== Table Module ====-->
+			<wtable [columns]="columns" [config]="config" [rows]="us.leads">
+				<ng-template cell="status" let-element>
+					<winput
+						(wChange)="element.is['owner'] = $event; element.is['canceled'] = !element.is['owner']; us.save(element)"
+						[value]="element.is['owner']"
+						label="Approved"
+						type="checkbox"
+					></winput>
+
+					<winput
+						(wChange)="element.is['canceled'] = $event; element.is['owner'] = !element.is['canceled']; us.save(element)"
+						[value]="element.is['canceled']"
+						label="Declined"
+						type="checkbox"
+					></winput>
+				</ng-template>
+			</wtable>
+			<!-- ==================== -->
+		</div>
+	</wcard>
+</div>

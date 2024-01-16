@@ -1,0 +1,34 @@
+<ng-container *ngIf="component.templateRef && data">
+	<ng-container
+		*ngTemplateOutlet="
+							component.templateRef;
+							context: {
+								$implicit: {
+									component: component,
+									config: config,
+									field: data.field,
+									value: data.value,
+									control: control,
+									form: form,
+									wSubmit: wSubmit.emit,
+									wChange: wChange.emit,
+									wClick: wClick.emit
+								}
+							}
+						"
+	></ng-container>
+</ng-container>
+
+<ng-container *ngIf="hasComponents">
+	<form-component
+		*ngFor="let comp of component.components"
+		[class]="comp.class || ''"
+		class="w-forms__component"
+		[component]="comp"
+		[submition]="submition"
+		[form]="form"
+		(wSubmit)="wSubmit.emit()"
+		(wChange)="wChange.emit()"
+		(wClick)="wClick.emit()"
+	></form-component>
+</ng-container>

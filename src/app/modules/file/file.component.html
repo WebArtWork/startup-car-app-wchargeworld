@@ -1,0 +1,13 @@
+<div *ngIf="isPhoto" (click)="set()">
+	<h3>{{label}}</h3>
+	<label *ngIf="!multiple" for="formPhoto">
+		<img [src]="value || '/assets/default.png'" alt="Picture">
+	</label>
+	<label *ngIf="multiple" for="formPhotos">Add</label>
+	<div *ngIf="multiple">
+		<div *ngFor="let file of files; index as i">
+			<img [src]="file" alt="Picture">
+			<i (click)="files.splice(i, 1)">X</i>
+		</div>
+	</div>
+</div>

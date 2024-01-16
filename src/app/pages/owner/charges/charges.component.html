@@ -1,0 +1,5 @@
+<wtable title="Charges" [columns]="columns" [config]="config" [rows]="rows">
+	<ng-template cell="qr" let-element>
+		<img src="/api/wcharge/qrcode/{{element._id}}.png" alt="" />
+	</ng-template>
+</wtable>

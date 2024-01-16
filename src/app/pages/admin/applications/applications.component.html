@@ -1,0 +1,12 @@
+<wtable
+	title="Applications"
+	[columns]="columns"
+	[config]="config"
+	[rows]="rows"
+>
+	<ng-template cell="approve" let-element>
+		<wbutton [disabled]="approved(element._id)" (wClick)="approve(element)">
+			Approve
+		</wbutton>
+	</ng-template>
+</wtable>

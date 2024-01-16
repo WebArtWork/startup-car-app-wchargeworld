@@ -1,0 +1,108 @@
+<router-outlet></router-outlet>
+
+<ng-template #textRef let-element>
+	<winput
+		[placeholder]="element.field.Placeholder"
+		[name]="element.field.Label || 'name'"
+		[focused]="element.component.focused"
+		[ngClass]="element.component.class"
+		[formControl]="element.control"
+		[label]="element.field.Label"
+		[form]="element.form"
+		[value]="element.value"
+	></winput>
+</ng-template>
+
+<ng-template #dateRef let-element>
+	<winput
+		type="date"
+		[placeholder]="element.field.Placeholder"
+		[name]="element.field.Label || 'name'"
+		[focused]="element.component.focused"
+		[ngClass]="element.component.class"
+		[formControl]="element.control"
+		[label]="element.field.Label"
+		[form]="element.form"
+		[value]="element.value"
+	></winput>
+</ng-template>
+
+<ng-template #timeRef let-element>
+	<winput
+		type="time"
+		[placeholder]="element.field.Placeholder"
+		[name]="element.field.Label || 'name'"
+		[focused]="element.component.focused"
+		[ngClass]="element.component.class"
+		[formControl]="element.control"
+		[label]="element.field.Label"
+		[form]="element.form"
+		[value]="element.value"
+	></winput>
+</ng-template>
+
+<ng-template #numberRef let-element>
+	<winput
+		type="number"
+		[placeholder]="element.field.Placeholder"
+		[name]="element.field.Label || 'name'"
+		[focused]="element.component.focused"
+		[ngClass]="element.component.class"
+		[formControl]="element.control"
+		[label]="element.field.Label"
+		[form]="element.form"
+		[value]="element.value"
+	></winput>
+</ng-template>
+
+<ng-template #emailRef let-element>
+	<winput
+		type="email"
+		[placeholder]="element.field.Placeholder"
+		[name]="element.field.Label || 'name'"
+		[focused]="element.component.focused"
+		[ngClass]="element.component.class"
+		[formControl]="element.control"
+		[label]="element.field.Label"
+		[form]="element.form"
+		[value]="element.value"
+	></winput>
+</ng-template>
+
+<ng-template #passwordRef let-element>
+	<winput
+		type="password"
+		[placeholder]="element.field.Placeholder"
+		[name]="element.field.Label || 'name'"
+		[focused]="element.component.focused"
+		[ngClass]="element.component.class"
+		[formControl]="element.control"
+		[label]="element.field.Label"
+		[form]="element.form"
+		[value]="element.value"
+	></winput>
+</ng-template>
+
+<ng-template #buttonRef let-element>
+	<wbutton>{{element.field.Label}}</wbutton>
+</ng-template>
+
+<ng-template #photoRef let-element>
+	<ngx-file
+		(update)="element.control.setValue($event)"
+		[label]="element.field.Label"
+		[value]="element.value"
+		[isPhoto]="true"
+	></ngx-file>
+</ng-template>
+
+<ng-template #photosRef let-element>
+	<ngx-file
+		(update)="element.control.setValue($event)"
+		[container]="element.config.formId"
+		[label]="element.field.Label"
+		[value]="element.value"
+		[multiple]="true"
+		[isPhoto]="true"
+	></ngx-file>
+</ng-template>

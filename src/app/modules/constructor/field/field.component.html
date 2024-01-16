@@ -1,0 +1,8 @@
+<div *ngFor="let _field of fields">
+	<winput
+		(wChange)="field[_field.name] = $event; update.emit()"
+		[placeholder]="'fill value for' + _field.name"
+		[value]="field[_field.name]"
+		[label]="_field.name"
+	></winput>
+</div>
